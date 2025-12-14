@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano Estratégico Comercial - Engenharia de Vendas</title>
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+            --col-processo: #2c3e50; /* Azul Petróleo/Cinza */
+            --col-tec: #8e44ad;      /* Roxo Moderno */
+            --col-exec: #27ae60;     /* Verde Sucesso */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin: 0;
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-top: 10px;
+        }
+
+        .map-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .column {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-top: 5px solid transparent;
+        }
+
+        /* Cores das Colunas */
+        .col-processo { border-color: var(--col-processo); background-color: #fbfcfd; }
+        .col-tec { border-color: var(--col-tec); background-color: #fcfbfd; }
+        .col-exec { border-color: var(--col-exec); background-color: #fbfffc; }
+
+        .col-title {
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: white;
+            width: 80%;
+        }
+
+        .col-processo .col-title { background-color: var(--col-processo); }
+        .col-tec .col-title { background-color: var(--col-tec); }
+        .col-exec .col-title { background-color: var(--col-exec); }
+
+        .card {
+            background: white;
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 40px; /* Espaço para a seta */
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 5px solid #ccc;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Setas conectando os cards */
+        .card:not(:last-child)::after {
+            content: "▼";
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #bdc3c7;
+        }
+
+        .col-processo .card { border-left-color: var(--col-processo); }
+        .col-tec .card { border-left-color: var(--col-tec); }
+        .col-exec .card { border-left-color: var(--col-exec); }
+
+        .card h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: var(--col-processo);
+        }
+
+        /* Responsividade para celular */
+        @media (max-width: 768px) {
+            .map-grid {
+                grid-template-columns: 1fr;
+            }
+            .card:not(:last-child)::after {
+                content: "▼"; /* Mantém a seta no mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Plano Estratégico Comercial</h1>
+            <h2>A Engenharia de Vendas: Gestão por Processos, Dados e IA</h2>
+        </header>
+
+        <div class="map-grid">
+            
+            <div class="column col-processo">
+                <div class="col-title">1. Engenharia de Processos</div>
+                
+                <div class="card">
+                    <h3>Captação de Leads</h3>
+                    <p>Matéria-Prima: Tráfego & Prospecção</p>
+                </div>
+
+                <div class="card">
+                    <h3>Funil de Qualificação</h3>
+                    <p>Triagem do Cliente Ideal (ICP)</p>
+                </div>
+
+                <div class="card">
+                    <h3>Negociação e Fechamento</h3>
+                    <p>Conversão Previsível</p>
+                </div>
+            </div>
+
+            <div class="column col-tec">
+                <div class="col-title">2. Inteligência & Ferramentas</div>
+                
+                <div class="card">
+                    <h3>IA Generativa (Gemini/GPT)</h3>
+                    <p>Criação Rápida de Scripts e E-mails</p>
+                </div>
+
+                <div class="card">
+                    <h3>CRM de Gestão</h3>
+                    <p>Memória de Clientes e Histórico</p>
+                </div>
+
+                <div class="card">
+                    <h3>Métricas e KPIs</h3>
+                    <p>Painel de Controle em Tempo Real</p>
+                </div>
+            </div>
+
+            <div class="column col-exec">
+                <div class="col-title">3. Estratégia de Crescimento</div>
+                
+                <div class="card">
+                    <h3>Prospecção Híbrida</h3>
+                    <p>Venda Ativa B2B + Atração Digital</p>
+                </div>
+
+                <div class="card">
+                    <h3>Pós-Venda e Retenção</h3>
+                    <p>Fidelização e Recompra</p>
+                </div>
+
+                <div class="card">
+                    <h3>Cultura de Resultados</h3>
+                    <p>Foco em Metas e Alta Performance</p>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <p><strong>Objetivo:</strong> Transformar o departamento comercial em um ativo previsível, escalável e independente,<br> unindo a solidez da indústria com a agilidade digital.</p>
+            <br>
+            <p>Responsável: <span class="highlight">Seu Nome Aqui</span> | Especialista em Gestão e Otimização</p>
+        </footer>
+    </div>
+
+</body>
+</html>
