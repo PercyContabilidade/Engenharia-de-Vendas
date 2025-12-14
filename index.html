@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plano Estratégico Comercial - Engenharia de Vendas</title>
+    <title>Plano Estratégico Comercial - Jairo Percy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --bg-color: #f4f7f6;
             --text-color: #333;
-            --col-processo: #2c3e50; /* Azul Petróleo/Cinza */
+            --col-processo: #2c3e50; /* Azul Petróleo */
             --col-tec: #8e44ad;      /* Roxo Moderno */
             --col-exec: #27ae60;     /* Verde Sucesso */
         }
@@ -21,142 +22,222 @@
             padding: 20px;
             display: flex;
             justify-content: center;
+            line-height: 1.6;
         }
 
         .container {
             max-width: 1200px;
             width: 100%;
             background: white;
-            padding: 40px;
+            padding: 50px;
             border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
 
         header {
             text-align: center;
-            margin-bottom: 50px;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 20px;
+            margin-bottom: 60px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 30px;
         }
 
         h1 {
             color: #2c3e50;
             margin: 0;
-            font-size: 2.2rem;
-            text-transform: uppercase;
+            font-size: 2.5rem;
+            font-weight: 800;
             letter-spacing: 1px;
         }
 
         h2 {
             color: #7f8c8d;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 400;
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         .map-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
         }
 
         .column {
             background: #fff;
-            border-radius: 10px;
-            padding: 20px;
+            border-radius: 12px;
+            padding: 25px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            border-top: 5px solid transparent;
+            border-top: 6px solid transparent;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
 
         /* Cores das Colunas */
-        .col-processo { border-color: var(--col-processo); background-color: #fbfcfd; }
-        .col-tec { border-color: var(--col-tec); background-color: #fcfbfd; }
-        .col-exec { border-color: var(--col-exec); background-color: #fbfffc; }
+        .col-processo { border-color: var(--col-processo); background-color: #fcfdfe; }
+        .col-tec { border-color: var(--col-tec); background-color: #fdfcfe; }
+        .col-exec { border-color: var(--col-exec); background-color: #fcfffd; }
 
         .col-title {
-            font-weight: bold;
+            font-weight: 700;
             text-transform: uppercase;
-            margin-bottom: 30px;
-            font-size: 1.1rem;
+            margin-bottom: 40px;
+            font-size: 1.2rem;
             text-align: center;
-            padding: 10px 20px;
-            border-radius: 20px;
+            padding: 12px 25px;
+            border-radius: 30px;
             color: white;
-            width: 80%;
+            width: 90%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        .col-processo .col-title { background-color: var(--col-processo); }
-        .col-tec .col-title { background-color: var(--col-tec); }
-        .col-exec .col-title { background-color: var(--col-exec); }
+        .col-processo .col-title { background: linear-gradient(135deg, var(--col-processo), #34495e); }
+        .col-tec .col-title { background: linear-gradient(135deg, var(--col-tec), #9b59b6); }
+        .col-exec .col-title { background: linear-gradient(135deg, var(--col-exec), #2ecc71); }
 
         .card {
             background: white;
             width: 100%;
-            padding: 20px;
-            margin-bottom: 40px; /* Espaço para a seta */
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-left: 5px solid #ccc;
+            padding: 25px;
+            margin-bottom: 50px; /* Espaço maior para a seta */
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+            border-left: 6px solid #ccc;
             position: relative;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: flex-start;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            transform: translateY(-7px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
         }
+
+        /* Estilo dos Ícones */
+        .card-icon {
+            font-size: 1.8rem;
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+        .col-processo .card-icon { color: var(--col-processo); }
+        .col-tec .card-icon { color: var(--col-tec); }
+        .col-exec .card-icon { color: var(--col-exec); }
 
         /* Setas conectando os cards */
         .card:not(:last-child)::after {
-            content: "▼";
+            content: "\f078";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
             position: absolute;
-            bottom: -35px;
+            bottom: -40px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 24px;
+            font-size: 28px;
             color: #bdc3c7;
+            opacity: 0.7;
         }
 
         .col-processo .card { border-left-color: var(--col-processo); }
         .col-tec .card { border-left-color: var(--col-tec); }
         .col-exec .card { border-left-color: var(--col-exec); }
 
-        .card h3 {
-            margin: 0 0 5px 0;
-            font-size: 1.1rem;
+        .card-content h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.2rem;
             color: #333;
+            font-weight: 700;
         }
 
-        .card p {
+        .card-content p {
             margin: 0;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #666;
             font-style: italic;
         }
 
         footer {
-            margin-top: 50px;
+            margin-top: 70px;
             text-align: center;
-            padding-top: 20px;
+            padding-top: 30px;
             border-top: 1px solid #eee;
             color: #555;
-            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-objective {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            font-style: italic;
+        }
+
+        .footer-signature {
+            font-size: 1rem;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* Botão WhatsApp */
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+        
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+            background-color: #128C7E;
+        }
+
+        .btn-whatsapp i {
+            margin-right: 10px;
+            font-size: 1.4rem;
         }
 
         .highlight {
-            font-weight: bold;
+            font-weight: 800;
             color: var(--col-processo);
+            font-size: 1.1rem;
         }
 
-        /* Responsividade para celular */
-        @media (max-width: 768px) {
+        /* Responsividade */
+        @media (max-width: 900px) {
             .map-grid {
                 grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            .card {
+                margin-bottom: 30px;
             }
             .card:not(:last-child)::after {
-                content: "▼"; /* Mantém a seta no mobile */
+                display: none;
+            }
+            .column::after {
+                content: "\f078";
+                font-family: "Font Awesome 6 Free";
+                font-weight: 900;
+                font-size: 32px;
+                color: #bdc3c7;
+                display: block;
+                margin-top: 30px;
+                text-align: center;
+            }
+            .column:last-child::after {
+                display: none;
             }
         }
     </style>
@@ -175,18 +256,27 @@
                 <div class="col-title">1. Engenharia de Processos</div>
                 
                 <div class="card">
-                    <h3>Captação de Leads</h3>
-                    <p>Matéria-Prima: Tráfego & Prospecção</p>
+                    <i class="fa-solid fa-magnet card-icon"></i>
+                    <div class="card-content">
+                        <h3>Captação Estruturada</h3>
+                        <p>Implementarei funis de atração de leads qualificados (Inbound & Outbound).</p>
+                    </div>
                 </div>
 
                 <div class="card">
-                    <h3>Funil de Qualificação</h3>
-                    <p>Triagem do Cliente Ideal (ICP)</p>
+                    <i class="fa-solid fa-filter card-icon"></i>
+                    <div class="card-content">
+                        <h3>Triagem & Qualificação</h3>
+                        <p>Definirei o Perfil de Cliente Ideal (ICP) para focar esforços apenas em quem compra.</p>
+                    </div>
                 </div>
 
                 <div class="card">
-                    <h3>Negociação e Fechamento</h3>
-                    <p>Conversão Previsível</p>
+                    <i class="fa-solid fa-handshake card-icon"></i>
+                    <div class="card-content">
+                        <h3>Fechamento Previsível</h3>
+                        <p>Criarei playbooks de negociação para padronizar e aumentar a taxa de conversão.</p>
+                    </div>
                 </div>
             </div>
 
@@ -194,18 +284,27 @@
                 <div class="col-title">2. Inteligência & Ferramentas</div>
                 
                 <div class="card">
-                    <h3>IA Generativa (Gemini/GPT)</h3>
-                    <p>Criação Rápida de Scripts e E-mails</p>
+                    <i class="fa-solid fa-robot card-icon"></i>
+                    <div class="card-content">
+                        <h3>IA Generativa (Gemini)</h3>
+                        <p>Automatizarei a criação de scripts de venda, e-mails e materiais de treinamento.</p>
+                    </div>
                 </div>
 
                 <div class="card">
-                    <h3>CRM de Gestão</h3>
-                    <p>Memória de Clientes e Histórico</p>
+                    <i class="fa-solid fa-database card-icon"></i>
+                    <div class="card-content">
+                        <h3>Implantação de CRM</h3>
+                        <p>Centralizarei o histórico e os dados dos clientes para gestão da carteira.</p>
+                    </div>
                 </div>
 
                 <div class="card">
-                    <h3>Métricas e KPIs</h3>
-                    <p>Painel de Controle em Tempo Real</p>
+                    <i class="fa-solid fa-chart-line card-icon"></i>
+                    <div class="card-content">
+                        <h3>Gestão por Indicadores (KPIs)</h3>
+                        <p>Monitorarei o desempenho em tempo real com dashboards claros.</p>
+                    </div>
                 </div>
             </div>
 
@@ -213,27 +312,43 @@
                 <div class="col-title">3. Estratégia de Crescimento</div>
                 
                 <div class="card">
-                    <h3>Prospecção Híbrida</h3>
-                    <p>Venda Ativa B2B + Atração Digital</p>
+                    <i class="fa-solid fa-bullseye card-icon"></i>
+                    <div class="card-content">
+                        <h3>Prospecção Híbrida</h3>
+                        <p>Unirei minha experiência em vendas B2B presenciais com estratégias digitais.</p>
+                    </div>
                 </div>
 
                 <div class="card">
-                    <h3>Pós-Venda e Retenção</h3>
-                    <p>Fidelização e Recompra</p>
+                    <i class="fa-solid fa-rotate card-icon"></i>
+                    <div class="card-content">
+                        <h3>Retenção & LTV</h3>
+                        <p>Estruturarei o pós-venda para garantir fidelização e recompra.</p>
+                    </div>
                 </div>
 
                 <div class="card">
-                    <h3>Cultura de Resultados</h3>
-                    <p>Foco em Metas e Alta Performance</p>
+                    <i class="fa-solid fa-trophy card-icon"></i>
+                    <div class="card-content">
+                        <h3>Cultura de Alta Performance</h3>
+                        <p>Liderarei pelo exemplo, com foco total em metas e resultados mensuráveis.</p>
+                    </div>
                 </div>
             </div>
 
         </div>
 
         <footer>
-            <p><strong>Objetivo:</strong> Transformar o departamento comercial em um ativo previsível, escalável e independente,<br> unindo a solidez da indústria com a agilidade digital.</p>
-            <br>
-            <p>Responsável: <span class="highlight">Seu Nome Aqui</span> | Especialista em Gestão e Otimização</p>
+            <p class="footer-objective"><strong>Objetivo:</strong> Transformar o departamento comercial em um ativo previsível, escalável e independente da figura do "vendedor estrela", unindo a solidez dos processos industriais com a agilidade da inteligência artificial.</p>
+            
+            <div class="footer-signature">
+                Responsável: <span class="highlight">Jairo Percy</span> | Administrador & Pós-graduado em Eng. Econômica | Especialista em IA aplicada a Negócios
+            </div>
+
+            <a href="https://wa.me/5521979667707?text=Ol%C3%A1%20Jairo,%20vi%20seu%20Plano%20de%20Vendas%20e%20gostaria%20de%20agendar%20uma%20entrevista." class="btn-whatsapp" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Agendar Entrevista via WhatsApp
+            </a>
+
         </footer>
     </div>
 
